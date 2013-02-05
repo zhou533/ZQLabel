@@ -7,6 +7,7 @@
 //
 
 #import "ZQAppDelegate.h"
+#import "ZQLabel.h"
 
 @implementation ZQAppDelegate
 
@@ -18,9 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    ZQLabel *z = [[[ZQLabel alloc] initWithFrame:CGRectMake(40, 40, 200, 400)] autorelease];
+    z.textColor = [UIColor grayColor];
+    z.font = [UIFont systemFontOfSize:14];
+    z.text = @"Welcome to use ZQLabel. [smile]This label view support hyberlinks and custom emojis. And this is our website http://dig.chouti.com ; Hope you can enjoy it.";
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    [self.window addSubview:z];
     [self.window makeKeyAndVisible];
     return YES;
 }
